@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>JDK ECLIPSE J2EE TOMCAT UBUNTU</title>
+</head>
+<body>
+	<h1>How to install JDK and Eclipse for J2EE version with tomcat 9 on ubuntu 20.04</h1>
+
+	<h2># Install JDK (java)</h2>
+	<ul>
+		<li>download debian package:
+			https://www.oracle.com/java/technologies/javase/jdk14-archive-downloads.html</li>
+		<li>Install it. It contains JRE already</li>
+	</ul>
+
+	<h2># Install Eclipse IDE</h2>
+	<ul>
+		<li>sudo apt install --classic eclipse</li>
+	</ul>
+	<h3>Update classic version for it to be same as Eclipse for J2EE
+		version.</h3>
+	<p>
+		1.In Eclipse go Help -> Install new Software...<br /> 2.Press Add...<br />
+		3.In address enter http://download.eclipse.org/releases/indigo/ and
+		name - whatever you like.<br /> 4.Install JavaEE Developer Tools
+		(under "Web, XML, JavaEE, and OSGi Enterprise Tools")<br />
+		5(Optional, but very useful).Install Marketplace Client (General
+		Purpose Tools -> Marketplace Client).
+	</p>
+
+	<h2># Install tomcat</h2>
+	<ul>
+		<li>sudo apt install tomcat9 tomcat9-admin</li>
+	</ul>
+
+	<h3># fix directories for Eclipse IDE</h3>
+	<ul>
+		<li>cd /usr/share/tomcat9</li>
+		<li>sudo ln -s /var/lib/tomcat9/conf conf</li>
+		<li>sudo ln -s /var/log/tomcat9 log</li>
+		<li>sudo ln -s /etc/tomcat9/policy.d/03catalina.policy
+			conf/catalina.policy</li>
+		<li>sudo chmod -R a+rwx /usr/share/tomcat9/conf</li>
+	</ul>
+
+	<h3># allow startup from inside eclipse</h3>
+	<ul>
+		<li>sudo service tomcat9 stop</li>
+	</ul>
+	
+	<h2>Follow tutorial</h2>
+	<li>https://www.youtube.com/watch?v=_vqvvcsodSg</li>
+</body>
+</html>
